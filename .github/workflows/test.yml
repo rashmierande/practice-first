@@ -5,7 +5,7 @@ jobs:
         runs-on: macos-latest
         steps:
             - name: get code
-              uses: action/checkout@v4
+              uses: actions/checkout@v4
             - name: Install Node.js
               uses: actions/setup-node@v4
               with:
