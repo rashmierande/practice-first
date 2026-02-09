@@ -1,0 +1,21 @@
+name: Issue Event
+on: [issues]
+jobs:
+    test:
+        runs-on: macos-latest
+        steps:
+        - name: get code
+          uses: actions/checkout@v4
+        - name: Install Node.js
+          uses: actions/setup-node@v4
+          with:
+            node:version: '18'
+        - name: Install dependencies
+          run: npm ci
+        - name: Run tests
+          run: npm test
+    outputdetails:
+        runs-on: macos-latest
+        steps:
+            - name : Output Event
+              run: echo "${{toJSON(github)}}"           

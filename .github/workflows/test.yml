@@ -33,5 +33,11 @@ jobs:
             - name: Build Project
               run: npm run build
             - name: Deploy
-              run: echo "Deploying....." 
+              run: echo "Deploying....."
+    outputdetails:
+        runs-on: macos-latest
+        steps:
+            - name : Output Event
+              run: echo "${{toJSON(github)}}"  
+
 
